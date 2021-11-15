@@ -1,0 +1,19 @@
+# we are allowed to use alias, in fact we should use alias as much as possible to save time
+# however in the real test environment, you won't find any default alias so don't spend time on setting up too much
+
+alias k='kubectl'
+# switch namespace
+kns () {
+  kubectl config set-context --current --namespace=$1
+}
+
+# kube_autocomplete
+# https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/
+
+# shortname of kubernetes object: speed up and prevent mistype
+# get full list of short name by running "kubectl api-resources"
+deployment: deploy
+configmap: cm
+pods: po
+replicaSet: rs
+services: svc
